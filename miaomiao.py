@@ -22,8 +22,8 @@ class DingDingHandler:
             secret_enc, string_to_sign_enc, digestmod=hashlib.sha256
         ).digest()
         sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
-        api_url = "https://oapi.dingtalk.com/robot/send?access_token={}&timestamp={}&sign={}".format(
-            self.token, timestamp, sign
+        api_url = "https://oapi.dingtalk.com/robot/send?access_token=SEC8f46922de4496a3d2c1c67a2f4fa41f0dcd9550835fd47f5dcf4bcfcf75382b2
+
         )
         return api_url
 
@@ -46,7 +46,7 @@ class DingDingHandler:
             "msgtype": "text",
             "text": {
 
-                "content":"CPU"+m
+                "content":"严凯敏的CPU"+m
             },
         }
         res = requests.post(self.get_url(), data=json.dumps(data), headers=headers)  # 发送post请求
@@ -54,6 +54,6 @@ class DingDingHandler:
 
 m = sys.argv[1]
 token="38792ee6d7a1bba223e6dff43b2d8ba1c4276b8a57cbc8bd8f6ca0c3e7bdc30f"
-secret="SECd0e6dfdbd82d211e27ce044786e134bb58cbe2dc47fc32201f45b31175dbef17"
+secret="SEC8f46922de4496a3d2c1c67a2f4fa41f0dcd9550835fd47f5dcf4bcfcf75382b2"
 dingDingHandler =DingDingHandler(token,secret)
 dingDingHandler.ddtextsend(m)
